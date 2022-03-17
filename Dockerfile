@@ -1,4 +1,5 @@
-FROM maven AS build
-WORKDIR /app
-COPY . .
-RUN mvn package
+FROM ubuntu
+COPY . /app
+RUN make /app
+
+CMD python /app/app.py
